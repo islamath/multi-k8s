@@ -1,0 +1,35 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "medrahim/multi-client:latest",
+            "hostname":"client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "medrahim/multi-server:latest",
+            "hostname":"api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "medrahim/multi-worker:latest",
+            "hostname":"worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "medrahim/multi-nginx:latest",
+            "essential": true,
+            "portMappings" : [
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links": ["client","server"]
+        }
+    ]
+}
