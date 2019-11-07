@@ -13,7 +13,7 @@ spec:
         component: worker
     spec:
       containers:
-      - name: multi-worker
+      - name: worker
         image: medrahim/multi-worker
         env:
           - name: REDIS_HOST
