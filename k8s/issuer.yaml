@@ -6,7 +6,7 @@ spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: 'mohamed.rahim@outlook.com'
-    priveKeySecretRef:
+    privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
       - selector: {}
